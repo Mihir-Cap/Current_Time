@@ -30,7 +30,7 @@ def get_time():
 
     # Convert UTC offset to timezone name
     if timezone.startswith('UTC'):
-        hours = int(timezone[4:].split(':')[0])
+        hours = int(timezone[4:].split(':')[0]) if timezone else 0
         minutes = int(timezone[4:].split(':')[1])
         tz = pytz.FixedOffset(hours * 60 + minutes)
     else:
